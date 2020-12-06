@@ -1,0 +1,793 @@
+/*
+
+▒█▀▄▀█ █▀▀ █▀▀▄ ░▀░ █▀▀█ 　 ▒█▀▀█ █░░█ █▀▀ █▀▀█ ░▀░ █▀▀ █▀▀
+▒█▒█▒█ █▀▀ █░░█ ▀█▀ █▄▄█ 　 ▒█░▒█ █░░█ █▀▀ █▄▄▀ ▀█▀ █▀▀ ▀▀█
+▒█░░▒█ ▀▀▀ ▀▀▀░ ▀▀▀ ▀░░▀ 　 ░▀▀█▄ ░▀▀▀ ▀▀▀ ▀░▀▀ ▀▀▀ ▀▀▀ ▀▀▀
+
+*/
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* >>>>>>>> I M P O R T A N T ! <<<<<<<<< */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 767px){
+    #haulixNavbarCollapse {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 375px;
+        margin-top: 24px;
+        /*background: rgba(66,76,94, 0.9);*/
+        background: rgba(255,255,255, 0.98);
+        border-top: 2px solid #F27D3E;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        z-index: 22;
+    }
+}
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Header ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 1330px){
+    .h_banner {left: -2%;}
+    .header_imagery_holder {width: 80%;}
+}
+
+@media screen and (max-width: 1220px){
+    .h_banner {left: 0;}
+    .header_imagery_holder {width: 82%;}
+}
+
+@media screen and (max-width: 1199px){
+    .haulix_homepage_header {min-height: 690px;}
+
+    .h_banner h1 {font-size: 3.4rem;}
+    .h_banner h4 {font-size: 1.5rem;}
+    .h_banner p {font-size: 1.222rem;}
+}
+
+@media screen and (max-width: 1100px){
+    button.haulix_navcta.signin_btn {width: 100px;}
+    button.haulix_navcta.tryit_btn {width: 100px;}
+}
+
+@media screen and (max-width: 1050px){
+    img.haulix_main_logo {width: 150px; top: 20px;}
+    .header_imagery_holder {width: 85%;}
+    button.haulix_hero_btn {width: 200px;}
+}
+
+@media screen and (max-width: 991px){
+    img.haulix_main_logo {display: none;}
+    img.haulix_solo_logo {display: block;}
+
+    ul.nav.navbar-nav.haulix_navlinks > li > a.anchor {font-size: 0.77rem;}
+    button.haulix_navcta.signin_btn {width: 80px; font-size: 0.77rem;}
+    button.haulix_navcta.tryit_btn {width: 80px; font-size: 0.77rem;}
+
+    .h_banner {left: -8%;}
+
+    .h_banner h1 {font-size: 2.7rem;}
+    .h_banner h4 {font-size: 1.3rem;}
+    .h_banner p {font-size: 1.1rem;}
+
+    .header_imagery_holder {width: 92%;}
+}
+
+
+@media screen and (max-width: 870px){
+    .header_imagery_holder {width: 96%;}
+}
+
+@media screen and (max-width: 818px){
+    .haulix_homepage_header {min-height: 620px;}
+
+    .h_banner {left: -2%;}
+
+    .h_banner h1 {font-size: 2.3rem;}
+    .h_banner h4 {font-size: 1.1rem;}
+    .h_banner p {font-size: 1rem;}
+
+    .header_imagery_holder {width: 100%;}
+}
+
+
+@media screen and (max-width: 780px){
+    ul.nav.navbar-nav.haulix_navlinks > li > a.anchor {margin-right: 6px;}
+}
+
+@media screen and (max-width: 767px){
+    img.haulix_main_logo {display: block;}
+    img.haulix_solo_logo {display: none;}
+
+    .h_banner {margin-top: 25%; left: 0; text-align: center;}
+    .h_banner h1 {font-size: 2.8rem; text-align: center;}
+    .h_banner h4 {font-size: 1.7rem; text-align: center;}
+    .h_banner p {font-size: 1.3rem; text-align: center; width: 70%; margin: 0 auto;}
+    button.haulix_hero_btn {margin-top: 25px;}
+
+    .header_imagery_holder {left: 0; right: 0; top: 55%;}
+    .haulix_homepage_header {height: 900px;}
+
+    ul.haulix_navlinks {top: 4px;}
+    ul.nav.navbar-nav.haulix_navlinks > li > a.anchor {font-size: 1rem;}
+    .navbar-default .navbar-nav > li > a:before {background-color: transparent !important;}
+    button.haulix_navcta.signin_btn {width: 150px; font-size: 1rem; margin-top: 12px; margin-left: 12px; margin-bottom: 12px;}
+    button.haulix_navcta.tryit_btn {width: 150px; font-size: 1rem; margin-left: 12px;}
+}
+
+@media screen and (max-width: 535px){
+    .haulix_homepage_header {height: 790px;}
+
+    .h_banner {margin-top: 28%;}
+
+    .h_banner h1 {font-size: 2.5rem;}
+    .h_banner h4 {font-size: 1.2rem;}
+    .h_banner p {font-size: 1rem; width: 80%;}
+}
+
+@media screen and (max-width: 425px){
+    .h_banner {margin-top: 45%;}
+    .header_imagery_holder {top: 64%;}
+}
+
+@media screen and (max-width: 368px){
+    .h_banner h1 {font-size: 2.2rem;}
+    .h_banner h4 {font-size: 1rem;}
+    .h_banner p {font-size: 0.9rem; width: 90%;}
+}
+
+@media screen and (max-width: 350px){
+    .haulix_homepage_header {height: 690px;}
+}
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Partners ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 1199px){
+    h6.partners_ttl {font-size: 1.44rem;}
+    .partner_logo {width: 160px;}
+}
+
+@media screen and (max-width: 991px){
+    h6.partners_ttl {font-size: 1.222rem; width: 85%;}
+    .partner_logo {width: 126px;}
+
+    section.grey_soundwave {height: 143px;}
+}
+
+@media screen and (max-width: 767px){
+    h6.partners_ttl {margin-top: 42px;}
+
+    .partner_logos_holder {padding-bottom: 44px;}
+    .partner_logo {width: 100%; margin-bottom: 22px;}
+}
+
+@media screen and (max-width: 535px){
+    .partners_area_str8 {padding-bottom: 0;}
+    h6.partners_ttl {margin-top: 2px;}
+    .partner_logo {margin-bottom: 42px;}
+
+    section.grey_soundwave {height: 90px;}
+}
+
+@media screen and (max-width: 420px){
+    h6.partners_ttl {font-size: 1rem;}
+    .partners_area_str8 {padding-top: 50px;}
+    .partner_logo {margin-bottom: 55px;}
+
+    section.grey_soundwave {height: 65px;}
+}
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Feedback ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 1199px){
+    .title_and_cta_holder h2 {font-size: 3.2rem;}
+    hr.section_separator {margin-top: 45%;}
+}
+
+@media screen and (max-width: 991px){
+    .title_and_cta_holder h2 {text-align: center; margin-bottom: 20px;}
+    svg.wave_separator_2 {width: 100%; margin: 0 auto;}
+
+    .testimonial_box_holder {padding-top: 55px;}
+    .testimonial_box_outerline {left: 0; margin-bottom: 60px;}
+
+    button.see_more_fdbk_btn {margin: 0 auto;}
+    hr.section_separator {margin-top: 100%;}
+    p.subsection_txt {margin-top: 26px;}
+}
+
+@media screen and (max-width: 885px){
+    span.haulix_ghost_logo {left: 11px;}
+}
+
+@media screen and (max-width: 767px){
+    hr.section_separator {margin-top: 8%; width: 90%;}
+}
+
+@media screen and (max-width: 680px){
+    .title_and_cta_holder h2 {font-size: 2.5rem;}
+    h2.subsection_ttl {font-size: 2.5rem;}
+    .fdbk_area_str8 {padding-top: 30px;}
+}
+
+@media screen and (max-width: 535px){
+    .testimonial_text_holder p {font-size: 1rem;}
+    button.choose_a_plan_btn_xl {width: 90%;}
+    hr.section_separator {margin-bottom: 15%;}
+}
+
+@media screen and (max-width: 475px) {
+    .testimonial_author_face {
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .testimonial_text_holder {width: 100%; margin-top: 22px;}
+    .testimonial_box_outerline {
+        min-height: 620px;
+        height: auto;
+        border: 1px solid #cecece;
+        padding-top: 0;
+        border-radius: 8px;
+    }
+    span.haulix_ghost_logo {width: 70px; height: 70px; top: -40px; z-index: 18;}
+    .testimonial_box_innerline {box-shadow: none;}
+
+    p.subsection_txt {width: 90%; margin: 0 auto; position: relative; top: 24px;}
+    button.choose_a_plan_btn_xl {margin-top: 64px;}
+}
+
+@media screen and (max-width: 396px){
+    .title_and_cta_holder h2 {font-size: 2.2rem;}
+    h2.subsection_ttl {font-size: 2.2rem;}
+    hr.section_separator {margin-top: 14%; margin-bottom: 14%;}
+    button.choose_a_plan_btn_xl {font-size: 0.8rem;}
+}
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Footer ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 1199px){
+    ul.f_social_linx li {margin-right: 10px;}
+}
+
+@media screen and (max-width: 991px){
+    ul.f_social_linx li {height: 20px; width: 20px; margin-right: 9px; padding-top: 1px;}
+    ul.f_social_linx li a {font-size: 0.77rem;}
+}
+
+@media screen and (max-width: 800px){
+    .bottommost_txt_holder {padding-left: 14px;}
+}
+
+@media screen and (max-width: 767px){
+    .footer_bgd {min-height: 495px; height: auto;}
+
+    .footer_logo_holder {padding-left: 22px; margin-bottom: 55px;}
+
+    .footer_links {float: left; margin-right: 35px;}
+
+    .footer_address p {top: 3px; margin-bottom: 18px;}
+}
+
+@media screen and (max-width: 658px){
+    .footer_links {float: left; margin-right: 22px;}
+}
+
+@media screen and (max-width: 606px){
+    .footer_links {float: left; margin-right: 12px;}
+}
+
+@media screen and (max-width: 566px){
+    ul.f_linx li a {font-size: 0.77rem;}
+
+    .footer_address span, .footer_email span {font-size: 1rem;}
+
+    .footer_address p {font-size: 0.77rem;}
+    .footer_email p {font-size: 0.77rem;}
+}
+
+@media screen and (max-width: 542px){
+    .copyright {float: none; text-align: center; padding-right: 0; margin-bottom: 12px;}
+    .privacy {float: none !important; text-align: center; padding-left: 0;}
+
+    .footer_logo {margin: 0 auto; text-align: center; display: block;}
+
+    .footer_address {margin-top: 24px; text-align: center; display: inline-block; }
+    .footer_email {text-align: center; display: inline-block; }
+
+    .footer_address p {width: 100%; padding-left: 15px;}
+    .footer_email p {padding-left: 18px;}
+}
+
+@media screen and (max-width: 525px){
+    .footer_bgd {min-height: 695px;}
+    .bottommost_txt_holder {padding-left: 0; padding-right: 0;}
+
+    .footer_links.first {width: 46%; margin-bottom: 24px;}
+    .footer_links.second {width: 46%; margin-bottom: 24px;}
+    .footer_links.third {width: 46%;}
+    .footer_links.fourth {width: 46%;}
+}
+
+
+
+
+/* - = - = - = - = - = - = - = - = - = - =*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Clients & Teams ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 1199px){
+    .inner_page_title_holder {padding-top: 160px;}
+
+    h2.inner_subttl {font-size: 2rem;}
+    article.inner_txt_leftaligned p {font-size: 1rem;}
+
+    .teams_illustration {height: 620px;}
+
+    .teams_subsection {padding-top: 0;}
+}
+
+@media screen and (max-width: 767px){
+    h2.inner_subttl {text-align: center;}
+    .clients_subsection {text-align: center; margin-bottom: 120px;}
+    .clients_text_details_holder {padding-left: 20px;}
+
+    article.inner_txt_leftaligned p {text-align: center;}
+
+    .teams_subsection {text-align: center;}
+    .teams_text_details_holder {padding-left: 20px; padding-right: 20px;}
+
+    .teams_illustration {height: 460px;}
+    .teams_text_details_holder {padding-top: 24px;}
+
+}
+
+@media screen and (max-width: 603px){
+    .inner_page_title_holder {padding-top: 190px;}
+
+    .clients_text_details_holder {padding-top: 24px;}
+
+    .inner_page_title_holder h1 {font-size: 2.9rem;}
+    .inner_page_title_holder h4 {font-size: 1.2rem;}
+}
+
+@media screen and (max-width: 506px){
+    .inner_page_title_holder {padding-top: 205px;}
+
+    .clients_and_teams_area_str8 {padding-top: 12px;}
+    .clients_text_details_holder {padding-top: 4px;}
+
+    .inner_page_title_holder h1 {font-size: 2.3rem;}
+    .inner_page_title_holder h4 {font-size: 1rem;}
+}
+
+
+@media screen and (max-width: 414px){
+    .clients_illustration_holder {padding-top: 5px;}
+    .clients_text_details_holder {top: -65px;}
+
+    .clients_subsection {margin-bottom: 24px;}
+
+
+    .inner_page_title_holder h1 {font-size: 2.1rem;}
+    .inner_page_title_holder h4 {font-size: 0.9rem;}
+}
+
+
+
+
+
+/* - = - = - = - = - = - = - = - = - = - =*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Engagement ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 991px){
+    .nggmnt_illustration {height: 555px;}
+}
+
+@media screen and (max-width: 630px){
+    .nggmnt_illustration {height: 440px;}
+}
+
+@media screen and (max-width: 550px){
+    .nggmnt_illustration {height: 330px;}
+}
+
+@media screen and (max-width: 475px){
+    h2.inner_subttl_centered {font-size: 1.888rem;}
+    article.inner_txt_centered p {font-size: 1rem;}
+}
+
+@media screen and (max-width: 414px){
+    h2.inner_subttl_centered {font-size: 1.6rem;}
+    article.inner_txt_centered p {font-size: 1rem;}
+}
+
+
+
+
+
+/* - = - = - = - = - = - = - = - = - = - =*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Sign In/Sign Up ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> L/XL <<<<< */
+
+@media screen and (min-width: 1500px){
+    svg.signup_logo {top: 85px;}
+}
+
+@media screen and (min-width: 1700px){
+    svg.signup_logo {top: 100px;}
+}
+
+@media screen and (min-width: 1900px){
+    svg.signup_logo {top: 110px;}
+}
+
+@media screen and (min-width: 2100px){
+    svg.signup_logo {top: 130px;}
+}
+
+@media screen and (min-width: 2500px){
+    svg.signup_logo {top: 180px;}
+}
+
+@media screen and (min-width: 3000px){
+    svg.signup_logo {top: 250px;}
+}
+
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 991px){
+    input.haulix_standard_input {width: 82%;}
+}
+
+@media screen and (max-width: 767px){
+    svg.signup_logo {top: 115px;}
+    .signup_area {height: 1024px;}
+    .signin_form_holder {padding-top: 125px;}
+    .v_wave {opacity: 0; height: 140vh; overflow: hidden;}
+}
+
+@media screen and (max-width: 555px){
+    svg.signup_logo {top: 100px;}
+    input.haulix_standard_input {width: 92%;}
+}
+
+@media screen and (max-width: 414px){
+    h3.signup_form_ttl {font-size: 1.4rem;}
+    input.haulix_standard_input {width: 97%;}
+}
+
+
+
+
+/* - = - = - = - = - = - = - = - = - = - =*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Forgot Password ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 1199px){
+    .gradient_wave {bottom: -82px;}
+}
+
+@media screen and (max-width: 991px){
+    .gradient_wave {bottom: -87px;}
+}
+
+@media screen and (max-width: 767px){
+    .forgot_pswd_box_holder {padding-top: 170px;}
+    .forgot_pswd_area {height: 880px;}
+    .gradient_wave {bottom: -80px;}
+    .forgot_pswd_box {width: 85%;}
+}
+
+@media screen and (max-width: 603px){
+    .gradient_wave {bottom: -84px;}
+}
+
+@media screen and (max-width: 495px){
+    .forgot_pswd_box_holder {padding-top: 200px;}
+    .gradient_wave {bottom: -87px;}
+    .forgot_pswd_box {width: 93%;}
+}
+
+@media screen and (max-width: 376px){
+    .gradient_wave {bottom: -90px;}
+    .forgot_pswd_box {width: 96%;}
+}
+
+
+
+
+
+/* - = - = - = - = - = - = - = - = - = - =*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Registration ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 767px){
+    .separation_wave_holder_2 {padding-top: 0;}
+    .haulix_form_fieldset_subdomain {padding-top: 5px;}
+    .payment_infoboard_holder {padding-top: 5px;}
+    .create_account_btn_holder {padding-top: 12px;}
+
+    .infoboard article {font-size: 0.9rem;}
+    .payment_infoboard article {font-size: 0.9rem;}
+
+    svg.selected_pricing_plan_icon {width: 110px;}
+
+}
+
+@media screen and (max-width: 650px){
+    .reg_form_one_holder h1 {font-size: 2rem;}
+    .infoboard article {font-size: 0.8rem;}
+    .payment_infoboard article {font-size: 0.8rem;}
+}
+
+@media screen and (max-width: 460px){
+    .infoboard article {font-size: 0.8rem;}
+    .payment_infoboard article {font-size: 0.8rem;}
+
+    .payment_infoboard {height: 150px;}
+    .infoboard {height: 150px;}
+}
+
+@media screen and (max-width: 414px){
+    .payment_infoboard {height: 190px;}
+    .infoboard {height: 190px;}
+
+    span.info_sign {width: 170px;}
+    svg.selected_pricing_plan_icon {width: 265px;}
+}
+
+@media screen and (max-width: 379px){
+    .haulix_form_group_central {width: 60%;}
+}
+
+@media screen and (max-width: 340px){
+    .infoboard article {font-size: 0.7rem;}
+    .payment_infoboard article {font-size: 0.7rem;}
+
+    ul.payment_methods li span {font-size: 2.8rem;}
+
+    .recaptcha_placeholder {width: 296px;}
+}
+
+
+
+
+
+
+
+/* - = - = - = - = - = - = - = - = - = - =*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Artists ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 1199px){
+    .artist_bubble {height: 140px; width: 140px;}
+}
+
+@media screen and (max-width: 767px){
+    .general_artist_bubbles_holder {padding-left: 45px;}
+}
+
+@media screen and (max-width: 620px){
+    .general_artist_bubbles_holder {padding-left: 22px;}
+}
+
+@media screen and (max-width: 530px){
+    .general_artist_bubbles_holder {padding-left: 2px;}
+}
+
+@media screen and (max-width: 490px){
+    .artist_bubble {height: 120px; width: 120px;}
+}
+
+@media screen and (max-width: 435px){
+    .artist_bubble {height: 170px; width: 170px;}
+    .artist_bubble_holder {width: 50%;}
+}
+
+@media screen and (max-width: 400px){
+    .artist_bubble {height: 155px; width: 155px;}
+}
+
+@media screen and (max-width: 364px){
+    .artist_bubble {height: 135px; width: 135px;}
+}
+
+@media screen and (max-width: 330px){
+    .artist_bubble {height: 125px; width: 125px;}
+}
+
+
+
+
+
+/* - = - = - = - = - = - = - = - = - = - =*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== How It Works ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+@media screen and (max-width: 1199px){
+    span.dotted_arrow {left: 166px;}
+}
+
+@media screen and (max-width: 991px){
+    span.monitor_laptop {height: 430px;}
+
+    span.dotted_arrow {left: 128px; top: 65px; height: 40px;}
+}
+
+@media screen and (max-width: 767px){
+    span.dotted_arrow {display: none;}
+
+    .circle_txt_holder {padding-top: 12px; margin-bottom: 70px;}
+
+    .monitoring_subsection_area {padding-top: 20px;}
+    .monitoring_subsection_area p {width: 85%; font-size: 0.9rem; margin: 0 auto;}
+    .discover_and_listen_in_one_pace_holder p {width: 85%; font-size: 0.9rem; margin: 0 auto;}
+}
+
+@media screen and (max-width: 475px){
+    span.monitor_laptop {height: 280px;}
+
+    .liquid_soundwave {height: 360px;}
+    .inner_liquid_soundwave_image_holder {height: 200px; width: 200px; top: 75px; left: -2px;}
+}
+
+@media screen and (max-width: 416px){
+    .haulix_vid_holder {width: 95%;}
+    span.vid_rect_orange {left: -4px; width: 150px; top: 20px;}
+    span.vid_rect_blue {    bottom: -60px; right: -5px; width: 140px;}
+}
+
+@media screen and (max-width: 400px){
+    span.monitor_laptop {height: 222px;}
+
+    .liquid_soundwave {height: 300px;}
+    .inner_liquid_soundwave_image_holder {height: 175px; width: 175px; top: 58px;}
+}
+
+
+
+
+
+/* - = - = - = - = - = - = - = - = - = - =*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========== Promo Designs ========== */
+/* !!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* >>>>> SM/XS <<<<< */
+
+
+
+@media screen and (max-width: 1300px){
+    .slick-prev {left: -25px;}
+    .slick-next {right: -25px;}
+}
+
+@media screen and (max-width: 1199px){
+    .slick-prev {left: -50px;}
+    .slick-next {right: -50px;}
+}
+
+@media screen and (max-width: 1085px){
+    .slick-prev {left: -25px;}
+    .slick-next {right: -25px;}
+}
+
+@media screen and (max-width: 767px){
+    .promo_designs_midmain_section p {font-size: 0.9rem; width: 85%; margin: 0 auto;}
+}
+
+@media screen and (max-width: 590px){
+    .soloslide {height: 670px;}
+}
+
+@media screen and (max-width: 480px){
+    .soloslide {height: 480px;}
+}
+
+@media screen and (max-width: 414px){
+    .soloslide {height: 410px;}
+}
+
+@media screen and (max-width: 380px){
+    .soloslide {height: 370px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

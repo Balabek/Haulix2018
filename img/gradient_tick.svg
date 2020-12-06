@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="13px" viewBox="0 0 18 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>tick</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="10.3118142%" x2="34.4004235%" y2="73.4736712%" id="linearGradient-1">
+            <stop stop-color="#E4773D" offset="0%"></stop>
+            <stop stop-color="#8F97A5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pricing-Plans" transform="translate(-1091.000000, -1469.000000)" fill-rule="nonzero" fill="url(#linearGradient-1)">
+            <g id="MIDMAIN" transform="translate(0.000000, 387.000000)">
+                <g id="Row-2" transform="translate(45.000000, 886.000000)">
+                    <g id="PP-X" transform="translate(1028.000000, 0.000000)">
+                        <g id="Line-1" transform="translate(17.000000, 192.000000)">
+                            <g id="tick" transform="translate(1.000000, 4.000000)">
+                                <path d="M17.7369123,0.292190476 C17.3861404,-0.0516560847 16.8174386,-0.0516560847 16.4665965,0.292190476 L5.70505263,10.8403148 L1.56849123,6.78582804 C1.2177193,6.44198148 0.649017544,6.44201587 0.298175439,6.78582804 C-0.0526315789,7.12964021 -0.0526315789,7.6870582 0.298175439,8.03090476 L5.06989474,12.7078783 C5.4205614,13.0516905 5.98968421,13.0514497 6.34021053,12.7078783 L17.7369123,1.53730159 C18.0877193,1.19348942 18.0876842,0.636037037 17.7369123,0.292190476 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

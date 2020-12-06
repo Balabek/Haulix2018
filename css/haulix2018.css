@@ -1,0 +1,2747 @@
+/*
+
+▒█░▒█ ░█▀▀█ ▒█░▒█ ▒█░░░ ▀█▀ ▀▄▒▄▀ 　 █▀█ █▀▀█ ▄█░ ▄▀▀▄
+▒█▀▀█ ▒█▄▄█ ▒█░▒█ ▒█░░░ ▒█░ ░▒█░░ 　 ░▄▀ █▄▀█ ░█░ ▄▀▀▄
+▒█░▒█ ▒█░▒█ ░▀▄▄▀ ▒█▄▄█ ▄█▄ ▄▀▒▀▄ 　 █▄▄ █▄▄█ ▄█▄ ▀▄▄▀
+
+*/
+
+
+
+/* =========== GENERAL =========== */
+
+/** {*/
+/*box-sizing: content-box;*/
+/*}*/
+
+html {
+    font-size: 14px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 14px;
+    height: 100%;
+    max-width: 100%;
+    /*text-rendering: optimizeLegibility;*/
+}
+
+.main {
+    width: 100%;
+    /*overflow-x: hidden;*/
+}
+
+a:focus, button:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+    border-color: transparent;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.001) inset, 0 0 1px rgba(255, 255, 255, 0.1);
+    outline: 0 none;
+}
+
+button {border-radius: 8px;}
+
+
+
+/* ============ NAVBAR =========== */
+
+nav.navbar.navbar-default.haulix_navbar {
+    position: absolute;
+    height: 105px !important;
+    /*border-bottom: 1px solid rgba(255,255,255,0.2);*/
+    z-index: 200;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0) !important;
+    border-radius: 0;
+    border-color: transparent;
+    border-right: hidden;
+    border-left: hidden;
+}
+
+
+a.navbar-brand.haulix_brand {
+    width: 15%;
+    margin-left: 12px;
+}
+
+img.haulix_main_logo {
+    display: block;
+    width: 200px;
+    position: relative;
+    top: 11px;
+}
+
+img.haulix_solo_logo {
+    display: none;
+    width: 55px;
+    position: relative;
+    top: 11px;
+}
+
+
+.navbar-toggle {
+    margin-top: 33px;
+    border: none;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #424C5E;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.rotator {
+    -webkit-transform: rotateZ(90deg);
+    -moz-transform: rotateZ(90deg);
+    -ms-transform: rotateZ(90deg);
+    -o-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar {background-color: #ff771c;}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background: transparent;}
+
+.haulix_navlinks {
+    position: relative;
+    top: 29px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    margin-right: 15px;
+    color: #000;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar-default .navbar-nav > .active > a {color: #777777;}
+
+.navbar-default .navbar-nav > li > a:before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 1px;
+    bottom: 12px;
+    left: 14%;
+    background-color: #F27D3E !important;
+    visibility: visible;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.navbar-default .navbar-nav > li.active > a:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+
+.navbar-default .navbar-nav > li > a:hover:before, .navbar-default .navbar-nav > li > a:focus:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.navbar-default .navbar-nav > li > a.navbar_login_link:before {
+    visibility: hidden;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+button.haulix_navcta.signin_btn {
+    padding-top: 8px;
+    width: 125px;
+    height: 42px;
+    margin-right: 15px;
+    background: rgba(0,0,0,0.050);
+    color: #000;
+    border: 1px solid #000;
+
+    -webkit-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    -ms-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+button.haulix_navcta.signin_btn:hover {
+    background: rgba(0,0,0,1);
+    color: #fff;
+}
+
+button.haulix_navcta.tryit_btn {
+    padding-top: 8px;
+    width: 125px;
+    height: 42px;
+    margin-right: 15px;
+    background: rgba(0,0,0,1);
+    color: #fff;
+
+    -webkit-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    -ms-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+button.haulix_navcta.tryit_btn:hover {
+    background: rgba(0,0,0,0.050);
+    color: #000;
+    border: 1px solid #000;
+}
+
+
+
+
+
+/* ============ HOMEPAGE HEADER =========== */
+
+.haulix_homepage_header {
+    min-height: 790px;
+    height: auto;
+    position: relative;
+    background: url('../img/header_background.png') center center no-repeat;
+    background-size: cover;
+}
+
+.h_banner {
+    position: absolute;
+    margin-top: 44%;
+    left: -10%;
+    padding-left: 2px;
+    width: 100%;
+}
+
+.h_banner h1 {
+    font-family: "Avenir Black", sans-serif;
+    font-size: 4rem;
+    text-align: left;
+    color: #000;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.h_banner h4 {
+    font-family: "Avenir Heavy", sans-serif;
+    font-size: 25px;
+    text-align: left;
+    color: #000;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+svg.wave_separator {
+    position: relative;
+    background: url("../img/wave_separator.svg") center center no-repeat;
+    background-size: contain;
+    width: 155px;
+    height: 32px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.h_banner p {
+    font-family: "Avenir Medium Oblique", sans-serif;
+    font-size: 21px;
+    text-align: left;
+    color: #000;
+    line-height: 1.1;
+    margin-bottom: 36px;
+}
+
+button.haulix_hero_btn {
+    font-size: 1rem;
+    height: 55px;
+    width: 255px;
+    background: #F27D3E;
+    color: #fff;
+    text-transform: uppercase;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+button.haulix_hero_btn:hover {
+    background: #ff8e36;
+    color: #fff;
+}
+
+.header_imagery_holder {
+    position: absolute;
+    z-index: 900;
+    right: -310px;
+    /*width: 75%;*/
+    width: 1075px;
+    top: 90px;
+}
+
+
+
+
+
+/* ============ PARTNERS AREA  =========== */
+
+.partners_area_skewed {
+    position: relative;
+    margin-top: -3%;
+    min-height: 603px;
+    height: auto;
+    background: #fafafa;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.partners_area_str8 {
+    padding-top: 125px;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+h6.partners_ttl {
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #000;
+    width: 60%;
+    margin: 0 auto;
+}
+
+h6.partners_ttl span {
+    font-family: "Avenir Heavy", sans-serif;
+}
+
+.partner_logos_holder {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.partner_logo {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.bmg {background: url("../img/BMG_Logo_2016.png") center center no-repeat; background-size: contain;}
+.eone {background: url("../img/EOne_Logo_2015.png") center center no-repeat; background-size: contain;}
+.condor {background: url("../img/220px-Concord_Music_logo.png") center center no-repeat; background-size: contain; height: 90px;}
+.qprime {background: url("../img/logo-qprime.png") center center no-repeat; background-size: contain; height: 70px;}
+.metalblade {background: url("../img/metal-blade-records-logo.png") center center no-repeat; background-size: contain; height: 70px;}
+
+section.grey_soundwave {
+    display: inline-block;
+    position: relative;
+    bottom: -80px;
+    overflow-y: hidden;
+    width: 100%;
+    height: 200px;
+    background: url('../img/soundwave_dotted_grey.png') center center no-repeat;
+    background-size: contain;
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+}
+
+
+
+
+/* ============ FEEDBACK AREA  =========== */
+
+.fdbk_area_skewed {
+    position: relative;
+    margin-top: -5%;
+    min-height: 900px;
+    height: auto;
+    background: #fff;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.fdbk_area_str8 {
+    padding-top: 125px;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.title_and_cta_holder {
+    padding-top: 45px;
+    text-align: left;
+}
+
+.title_and_cta_holder h2 {
+    font-family: "Avenir Heavy", sans-serif;
+    color: #424C5E;
+    font-size: 3.7rem;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+button.see_more_fdbk_btn {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #424C5E;
+    border: 1px solid #424C5E;
+    background: rgba(66,76,94,0.0500);
+    width: 255px;
+    height: 55px;
+    padding-top: 8px;
+    margin-top: 45px;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.see_more_fdbk_btn:hover {
+    color: #fff;
+    background: #424C5E;
+}
+
+.testimonial_box_outerline {
+    position: relative;
+    width: 100%;
+    padding-top: 50px;
+    left: 50px;
+}
+
+span.haulix_ghost_logo {
+    position: absolute;
+    top: -30px;
+    left: -70px;
+    z-index: 0;
+    display: inline-block;
+    width: 131px;
+    height: 131px;
+    background: url('../img/haulix_ghost.png') center center no-repeat;
+    background-size: contain;
+}
+
+.testimonial_box_innerline {
+    position: relative;
+    display: block;
+    z-index: 8;
+    border-radius: 8px;
+    height: 296px;
+    width: 100%;
+    background: #f7f7f7;
+    padding: 0;
+
+    -webkit-box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14);
+    -moz-box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14);
+}
+
+.testimonial_author_face {
+    position: relative;
+    /*width: 185px;*/
+    height: inherit;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+
+    filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.testimonial_author_face.author_01 {background: url('../img/pexels-photo-939817.jpeg') center center no-repeat;  background-size: cover;}
+
+.testimonial_text_holder {
+    position: relative;
+    padding: 16px;
+}
+
+.testimonial_text_holder p {
+    display: inline-block;
+    font-family: "Avenir Medium Oblique", sans-serif;
+    color: #000;
+    text-align: left;
+    font-size: 1.1rem;
+    min-height: 200px;
+    /*overflow-y: hidden;*/
+}
+
+h6.testimonial_author_name {
+    font-family: "Avenir Black", sans-serif;
+    font-size: 1.1rem;
+    color: #000;
+    text-align: left;
+}
+
+h6.testimonial_author_role {
+    font-family: "Avenir Light", sans-serif;
+    font-size: 1rem;
+    color: #424C5E;
+    text-align: left;
+}
+
+span.quote_icon {
+    position: absolute;
+    bottom: -28px;
+    right: 28px;
+    z-index: 10;
+    display: inline-block;
+    width: 61px;
+    height: 61px;
+    background: url('../img/Quote.png') center center no-repeat;
+    background-size: contain;
+}
+
+hr.section_separator {
+    margin-top: 40%;
+    margin-bottom: 7%;
+    width: 100%;
+    clear: both;
+    border-color: #424C5E;
+    opacity: 0.4;
+}
+
+svg.wave_separator_2 {
+    position: relative;
+    background: url("../img/Wave2.svg") center center no-repeat;
+    background-size: contain;
+    width: 155px;
+    height: 32px;
+    /*text-align: left;*/
+    margin-bottom: 16px;
+}
+
+
+
+
+/* ============ CTA SUB-SECTION AREA  =========== */
+
+h2.subsection_ttl {
+    font-family: "Avenir Heavy", sans-serif;
+    color: #424C5E;
+    font-size: 3.7rem;
+    text-align: center;
+}
+
+p.subsection_txt {
+    font-family: "Avenir Medium", sans-serif;
+    color: #000;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+button.choose_a_plan_btn_xl {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    background: #F27D3E;
+    width: 500px;
+    height: 55px;
+    padding-top: 8px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.choose_a_plan_btn_xl:hover {
+    color: #fff;
+    background: #ff8e36;
+}
+
+
+
+
+
+
+/* ============ FOOTER  =========== */
+
+.pre_footer_skew {
+    position: relative;
+    margin-top: 0;
+    min-height: 100px;
+    height: auto;
+    background: #EDEDED;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+footer.haulix2018_footer {
+    position: relative;
+    min-height: 360px;
+    height: auto;
+    margin-top: -2%;
+}
+
+.footer_bgd {
+    width: 100%;
+    height: 380px;
+    background: url('../img/footer_bgd.png') center center no-repeat;
+    background-size: cover;
+    padding-top: 26px;
+}
+
+span.digital_wave_footer {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 110px;
+    background: url('../img/Digital Wave.svg') center center no-repeat;
+    background-size: cover;
+}
+
+.footer_logo_holder {
+    position: relative;
+    padding-left: 0;
+}
+
+.footer_logo {
+    display: block;
+    height: 50px;
+    width: 200px;
+    background: url('../img/haulix_logo.svg') center center no-repeat;
+    background-size: contain;
+    margin-bottom: 24px;
+}
+
+.footer_address {
+    margin-bottom: 10px;
+}
+
+.footer_address span, .footer_email span {
+    font-size: 1.3rem;
+    color: #424C5E;
+    float: left;
+}
+
+.footer_address p {
+    position: relative;
+    top: -7px;
+    width: 80%;
+    font-family: "Avenir Regular", sans-serif;
+    color: #424C5E;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.3;
+    padding-left: 25px;
+}
+
+.footer_email p {
+    position: relative;
+    top: 2px;
+    font-family: "Avenir Regular", sans-serif;
+    color: #424C5E;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.3;
+    padding-left: 25px;
+}
+
+.footer_links {
+    padding-left: 22px;
+}
+
+.footer_links h6 {
+    font-family: "Avenir Heavy", sans-serif;
+    color: #F27D3E;
+    text-transform: uppercase;
+    text-align: left;
+    padding-left: 0;
+}
+
+ul.f_linx {
+    padding-left: 0;
+}
+
+ul.f_linx li {
+    list-style-type: none;
+    margin-bottom: 14px;
+}
+
+ul.f_linx li a {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.90rem;
+    color: #424C5E;
+    text-decoration: none;
+}
+
+ul.f_social_linx {
+    padding-left: 0;
+}
+
+ul.f_social_linx li {
+    display: inline-block;
+    float: left;
+    margin-right: 16px;
+    list-style-type: none;
+    border-radius: 100%;
+    background: #424C5E;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    padding-top: 5px;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+ul.f_social_linx li a {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+ul.f_social_linx li:hover {
+    background: #F27D3E;
+}
+
+.bottommost_txt_holder {
+    position: absolute;
+    z-index: 3;
+    bottom: 6px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.copyright {
+    padding-left: 0;
+    float: left;
+}
+
+.copyright small {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.8rem;
+    text-align: left;
+    color: #424C5E;
+}
+
+.privacy {
+    padding-right: 0;
+    float: right;
+    text-align: right;
+}
+
+.privacy small {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.8rem;
+    text-align: left;
+    color: #424C5E;
+}
+
+.privacy small a {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.8rem;
+    text-align: left;
+    color: #F27D3E;
+}
+
+.address_and_email_holder {
+    text-align: center;
+    display: block;
+}
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - CLIENTS & TEAMS (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.haulix_innerpage_header {
+    min-height: 500px;
+    height: auto;
+    position: relative;
+    background: url('../img/clientsandteams_bgd.png') center center no-repeat;
+    background-size: cover;
+}
+
+.clients_and_teams_area_skew {
+    position: relative;
+    margin-top: -3%;
+    min-height: 603px;
+    /*height: auto;*/
+    background: #fff;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.clients_and_teams_area_str8 {
+    padding-top: 16px;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.teams_subsection {
+    padding-top: 24px;
+}
+
+.inner_page_title_holder {
+    padding-top: 14%;
+}
+
+.inner_page_title_holder h1 {
+    font-family: "Avenir Black", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.inner_page_title_holder h4 {
+    font-family: "Avenir Heavy", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+svg.orange_wave {
+    position: relative;
+    background: url("../img/wave_orange.svg") center center no-repeat;
+    background-size: contain;
+    width: 155px;
+    height: 32px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.clients_illustration_holder {
+    padding-top: 55px;
+}
+
+.clients_illustration {
+    display: block;
+    height: 640px;
+    width: 100%;
+    background: url(../img/haulixstration_1_transp.png) center center no-repeat;
+    background-size: contain;
+}
+
+.clients_text_details_holder {
+    padding-left: 110px;
+    padding-top: 90px;
+}
+
+h2.inner_subttl {
+    font-family: "Avenir Heavy", sans-serif;
+    font-size: 2.4rem;
+    text-align: left;
+    line-height: 1.4;
+}
+
+svg.bluegray_wave {
+    position: relative;
+    background: url("../img/Wave2.svg") center center no-repeat;
+    background-size: contain;
+    width: 155px;
+    height: 32px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+article.inner_txt_leftaligned {
+    margin-bottom: 55px;
+}
+
+article.inner_txt_leftaligned p {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1.14rem;
+    color: #000;
+    text-align: left;
+    line-height: 1.5;
+}
+
+button.trynow_btn {
+    font-family: "Avenir Medium",sans-serif;
+    font-size: 1rem;
+    width: 255px;
+    height: 55px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.trynow_btn:hover {
+    background: #759AAB;
+    color: #fff;
+}
+
+.teams_text_details_holder {
+    padding-left: 24px;
+    padding-right: 55px;
+    padding-top: 99px;
+}
+
+.teams_illustration_holder{
+    position: relative;
+    padding-top: 26px;
+}
+
+.teams_illustration {
+    display: block;
+    height: 640px;
+    width: 100%;
+    background: url(../img/haulixstration_2_transp.png) center center no-repeat;
+    background-size: contain;
+}
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - ENGAGEMENT (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.haulix_innerpage_header.nggmnt {
+    min-height: 500px;
+    height: auto;
+    position: relative;
+    background: url('../img/engagement_bgd.png') center center no-repeat;
+    background-size: cover;
+}
+
+.nggmnt_area_skew {
+    position: relative;
+    margin-top: -3%;
+    min-height: 603px;
+    /*height: auto;*/
+    background: #fff;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.nggmnt_area_str8 {
+    padding-top: 5px;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.nggmnt_illustration_and_txt_holder {
+    padding-top: 5px;
+}
+
+.nggmnt_illustration {
+    display: block;
+    height: 700px;
+    width: 100%;
+    background: url(../img/haulixstration_3.png) center center no-repeat;
+    background-size: contain;
+}
+
+h2.inner_subttl_centered {
+    font-family: "Avenir Heavy", sans-serif;
+    font-size: 2.4rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+article.inner_txt_centered {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 55px;
+}
+
+article.inner_txt_centered p {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1.14rem;
+    color: #000;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - PRICING (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.haulix_innerpage_header.pricing {
+    min-height: 500px;
+    height: auto;
+    position: relative;
+    background: url('../img/pricing_bgd.png') center center no-repeat;
+    background-size: cover;
+}
+
+.pricing_area_skew {
+    position: relative;
+    margin-top: -3%;
+    min-height: 603px;
+    /*height: auto;*/
+    background: #f8f8f8;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 155px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.pricing_area_str8 {
+    padding-top: 55px;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.pricingbox_holder {
+    padding-top: 70px;
+}
+
+.pricingbox {
+    width: 100%;
+    height: 565px;
+    background: #fff;
+    /*border-width: 1px;*/
+    border: 1px solid #DD7734;
+    border-radius: 5px;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+
+    /*border-left: 1px solid #E4773D;*/
+    /*border-right: 1px solid #C5D3DA;*/
+    /*-webkit-box-sizing: border-box;*/
+    /*-moz-box-sizing: border-box;*/
+    /*box-sizing: border-box;*/
+    /*background-position: 0 0, 0 100%;*/
+    /*background-repeat: no-repeat;*/
+    /*-webkit-background-size: 100% 1px;*/
+    /*-moz-background-size: 100% 1px;*/
+    /*background-size: 100% 1px;*/
+    /*background-image: -webkit-linear-gradient(left, #E4773D 0%, #C5D3DA 100%), -webkit-linear-gradient(left, #E4773D 0%, #C5D3DA 100%);*/
+    /*background-image: -moz-linear-gradient(left, #E4773D 0%, #C5D3DA 100%), -moz-linear-gradient(left, #E4773D 0%, #C5D3DA 100%);*/
+    /*background-image: -o-linear-gradient(left, #E4773D 0%, #C5D3DA 100%), -o-linear-gradient(left, #E4773D 0%, #C5D3DA 100%);*/
+    /*background-image: linear-gradient(to right, #E4773D 0%, #C5D3DA 100%), linear-gradient(to right, #E4773D 0%, #C5D3DA 100%);*/
+}
+
+
+.pp_icon_holder {
+    text-align: center;
+    padding-top: 18px;
+}
+
+svg.pp_icon {
+    display: inline-block;
+    text-align: center;
+    width: 65px;
+    height: 65px;
+    background-size: contain;
+}
+
+svg.pp_icon.risingstar {background: url('../img/pp_risingstar.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon.thebeast {background: url('../img/pp_thebeast.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon.powerhouse {background: url('../img/pp_powerhouse.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon.climber {background: url('../img/pp_climber.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon.thewhale {background: url('../img/pp_thewhale.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon.themammoth {background: url('../img/pp_themammoth.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon.ultimate {background: url('../img/pp_ultimate.svg') center center no-repeat; background-size: contain;}
+
+
+svg.pp_icon_white {
+    display: none;
+    text-align: center;
+    width: 65px;
+    height: 65px;
+    background-size: contain;
+}
+
+svg.pp_icon_white.risingstar_white {background: url('../img/pp_risingstar_white.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon_white.thebeast_white {background: url('../img/pp_thebeast_white.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon_white.powerhouse_house {background: url('../img/pp_powerhouse_white.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon_white.climber_white {background: url('../img/pp_climber_white.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon_white.thewhale_white {background: url('../img/pp_thewhale_white.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon_white.themammoth_white {background: url('../img/pp_themammoth_white.svg') center center no-repeat; background-size: contain;}
+svg.pp_icon_white.ultimate_white {background: url('../img/pp_ultimate_white.svg') center center no-repeat; background-size: contain;}
+
+
+.pricingbox:hover {
+    background: rgb(228,119,61);
+    background: linear-gradient(180deg, rgba(228,119,61,1) 35%, rgba(197,211,218,1) 100%);
+    border: none;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.pricingbox:hover svg.pp_icon_white {
+    display: inline-block;
+}
+.pricingbox:hover svg.pp_icon {
+    display: none;
+}
+
+.pricingbox:hover h5.pp_ttl {color: #ffffff;}
+
+.pricingbox:hover h2.pp_price {color: #ffffff;}
+
+.pricingbox:hover h2.pp_price span {color: #ffffff;}
+
+.pricingbox:hover .pp_data_piece span {color: #ffffff;}
+
+.pricingbox:hover button.pp_signup_btn {color: #ffffff; border: 1px solid #ffffff;}
+
+
+.pp_ttl_and_price_holder {
+    text-align: center;
+}
+
+h5.pp_ttl {
+    font-family: "Avenir Light",sans-serif;
+    font-size: 1.14rem;
+    color: #424C5E;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pp_price {
+    font-family: "Avenir Black", sans-serif;
+    text-align: center;
+    color: #424C5E;
+    font-size: 3rem;
+}
+
+.pp_price sup {
+    font-family: "Avenir Heavy", sans-serif;
+    font-size: 1.6rem;
+}
+
+.pp_price span {
+    font-family: "Avenir Light", sans-serif;
+    font-size: 1.11rem;
+    color: #424C5E;
+}
+
+.pp_details_holder {
+    padding-top: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.pp_data_piece {
+    border-bottom: 1px solid #cecece;
+    margin-bottom: 36px;
+}
+
+.pp_data_piece span.title {
+    font-family: "Avenir Medium", sans-serif;
+    color: #909090;
+    text-align: left;
+}
+
+.pp_data_piece span.detail {
+    font-family: "Avenir Medium", sans-serif;
+    color: #909090;
+    text-align: right;
+    float: right;
+}
+
+.pp_signup_btn_holder {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+button.pp_signup_btn {
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 1rem;
+    border: 1px solid #DD7734;
+    color: #DD7734;
+    background: transparent;
+    width: 90%;
+    height: 44px;
+    position: relative;
+    bottom: -50px;
+    text-transform: uppercase;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.pp_signup_btn:hover {
+    color: #DD7734 !important;
+    background: #ffffff;
+}
+
+.haulixbox {
+    position: relative;
+    width: 100%;
+    height: 565px;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+}
+
+.bigcheck {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url('../img/big_check_icon.svg') center center no-repeat;
+    background-size: 90%;
+}
+
+.haulix_ppbox_solo_icon {
+    display: inline-block;
+    text-align: center;
+    width: 65px;
+    height: 65px;
+    background: url('../img/haulix_solo.svg') center center no-repeat;
+    background-size: contain;
+}
+
+h5.haulix_ppbox_ttl {
+    font-family: "Avenir Medium",sans-serif;
+    font-size: 1.14rem;
+    color: #424C5E;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.haulixbox_details_holder {
+    padding-top: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.haulixbox_data_piece {
+    border-bottom: 1px solid #cecece;
+    margin-bottom: 36px;
+}
+
+.haulixbox_data_piece p {
+    font-family: "Avenir Light", sans-serif;
+    font-size: 0.9rem;
+    color: #424C5E;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+span.tick {
+    height: 18px;
+    width: 18px;
+    float: left;
+    margin-right: 8px;
+    background: url('../img/gradient_tick.svg') center center no-repeat;
+    background-size: contain;
+}
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - SIGN IN/SIGN UP (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.signup_area {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    background: rgba(238,191,165,1);
+    background: -moz-linear-gradient(left, rgba(238,191,165,1) 0%, rgba(244,244,244,1) 51%, rgba(201,204,210,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(238,191,165,1)), color-stop(51%, rgba(244,244,244,1)), color-stop(100%, rgba(201,204,210,1)));
+    background: -webkit-linear-gradient(left, rgba(238,191,165,1) 0%, rgba(244,244,244,1) 51%, rgba(201,204,210,1) 100%);
+    background: -o-linear-gradient(left, rgba(238,191,165,1) 0%, rgba(244,244,244,1) 51%, rgba(201,204,210,1) 100%);
+    background: -ms-linear-gradient(left, rgba(238,191,165,1) 0%, rgba(244,244,244,1) 51%, rgba(201,204,210,1) 100%);
+    background: linear-gradient(to right, rgba(238,191,165,1) 0%, rgba(244,244,244,1) 51%, rgba(201,204,210,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eebfa5', endColorstr='#c9ccd2', GradientType=1 );
+}
+
+.v_wave {
+    position: absolute;
+    opacity: 0.3;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: url('../img/Vertical Soundwave.svg') center center no-repeat;
+    background-size: contain;
+}
+
+svg.signup_logo {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 75px;
+    width: 220px;
+    height: 55px;
+    background: url('../img/haulix_logo.svg') center center no-repeat;
+    background-size: contain;
+}
+
+.promo_access_link_form_holder {
+    padding-top: 250px;
+    text-align: center;
+}
+
+input.haulix_standard_input {
+    position: relative;
+    font-family: "Avenir Light", sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #424C5E;
+    height: 48px;
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid #cacaca;
+    border-radius: 8px;
+    background: #ffffff;
+    padding-left: 14px;
+    outline: none !important;
+    box-shadow: none;
+}
+
+input.haulix_standard_input:focus {
+    border: 1px solid #cacaca;
+}
+
+h3.signup_form_ttl {
+    font-family: "Avenir Heavy", sans-serif;
+    font-size: 1.6rem;
+    color: #000;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.haulix_form_group {
+    position: relative;
+    z-index: 20;
+    margin-bottom: 8px;
+}
+
+button.promo_link_submit_btn {
+    position: relative;
+    top: 16px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    width: 250px;
+    height: 48px;
+    background: #000;
+    color: #fff;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.promo_link_submit_btn:hover {
+    background: #759AAB;
+    color: #fff;
+}
+
+.signin_form_holder {
+    text-align: center;
+    padding-top: 250px;
+}
+
+
+button.signin_signup_btn {
+    position: relative;
+    top: 16px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    width: 250px;
+    height: 48px;
+    background: #F3852C;
+    color: #fff;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.signin_signup_btn:hover {
+    background: #d67527;
+    color: #fff;
+}
+
+button.forgot_pswd {
+    position: relative;
+    top: 26px;
+    display: block;
+    margin: 0 auto;
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.9rem;
+    color: #424C5E;
+    text-align: center;
+}
+
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - FORGOT PASSWORD? (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.forgot_pswd_area {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    background: rgba(117,154,171,1);
+    background: -moz-linear-gradient(left, rgba(117,154,171,1) 0%, rgba(248,248,248,1) 51%, rgba(248,248,248,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(117,154,171,1)), color-stop(51%, rgba(248,248,248,1)), color-stop(100%, rgba(248,248,248,1)));
+    background: -webkit-linear-gradient(left, rgba(117,154,171,1) 0%, rgba(248,248,248,1) 51%, rgba(248,248,248,1) 100%);
+    background: -o-linear-gradient(left, rgba(117,154,171,1) 0%, rgba(248,248,248,1) 51%, rgba(248,248,248,1) 100%);
+    background: -ms-linear-gradient(left, rgba(117,154,171,1) 0%, rgba(248,248,248,1) 51%, rgba(248,248,248,1) 100%);
+    background: linear-gradient(to right, rgba(117,154,171,1) 0%, rgba(248,248,248,1) 51%, rgba(248,248,248,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#759aab', endColorstr='#f8f8f8', GradientType=1 );
+}
+
+svg.forgot_pswd_logo {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    top: 75px;
+    width: 220px;
+    height: 55px;
+    background: url('../img/haulix_logo.svg') center center no-repeat;
+    background-size: contain;
+}
+
+.forgot_pswd_box_holder {
+    padding-top: 125px;
+    margin: 0 auto;
+}
+
+.forgot_pswd_box {
+    position: relative;
+    margin: 0 auto;
+    width: 55%;
+    height: 435px;
+    background: #f1f1f1;
+    border: 1px solid #cacaca;
+    border-radius: 8px;
+    padding-top: 22px;
+}
+
+svg.padlock_icon {
+    height: 45px;
+    width: 100%;
+    text-align: center;
+    background: url('../img/padlock.svg') center center no-repeat;
+    background-size: contain;
+}
+
+.forgot_pswd_box h3 {
+    font-family: "Avenir Heavy", sans-serif;
+    font-size: 1.7rem;
+    color: #000;
+    text-align: center;
+}
+
+.forgot_pswd_box h6 {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1rem;
+    color: #000;
+    text-align: center;
+}
+
+button.forgot_submit_btn {
+    position: relative;
+    z-index: 300;
+    top: 16px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    width: 250px;
+    height: 46px;
+    background: #F3852C;
+    color: #fff;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.forgot_submit_btn:hover {
+    background: #d67527;
+    color: #fff;
+}
+
+.gradient_wave {
+    position: absolute;
+    bottom: -80px;
+    height: 200px;
+    width: 100%;
+    background: url('../img/gradient_wave.png') center center no-repeat;
+    background-size: contain;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - REGISTRATION (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.registration_area {
+    position: relative;
+    min-height: 1200px;
+    height: auto;
+    padding-bottom: 55px;
+
+    background: rgba(230,231,234,1);
+    background: -moz-linear-gradient(left, rgba(230,231,234,1) 0%, rgba(254,254,254,1) 51%, rgba(251,251,251,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(230,231,234,1)), color-stop(51%, rgba(254,254,254,1)), color-stop(100%, rgba(251,251,251,1)));
+    background: -webkit-linear-gradient(left, rgba(230,231,234,1) 0%, rgba(254,254,254,1) 51%, rgba(251,251,251,1) 100%);
+    background: -o-linear-gradient(left, rgba(230,231,234,1) 0%, rgba(254,254,254,1) 51%, rgba(251,251,251,1) 100%);
+    background: -ms-linear-gradient(left, rgba(230,231,234,1) 0%, rgba(254,254,254,1) 51%, rgba(251,251,251,1) 100%);
+    background: linear-gradient(to right, rgba(230,231,234,1) 0%, rgba(254,254,254,1) 51%, rgba(251,251,251,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e7ea', endColorstr='#fbfbfb', GradientType=1 );
+}
+
+.separation_wave_holder {
+    position: relative;
+    text-align: center;
+    padding-top: 125px;
+    height: 50px;
+    margin-bottom: 26px;
+}
+
+.separation_wave_holder_2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 125px;
+    height: 50px;
+    margin-bottom: 26px;
+}
+
+svg.separation_wave {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    background: url('../img/orange_separwave.png') center center no-repeat;
+    background-size: contain;
+}
+
+.back_to_pricing_btn {
+    position: relative;
+    float: left;
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 0.88rem;
+    color: #424C5E;
+    text-decoration: none !important;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.back_to_pricing_btn span {
+    color: #424C5E;
+    font-size: 0.88rem;
+    margin-right: 4px;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.back_to_pricing_btn:hover span {
+    color: #F3852C;
+}
+
+.reg_form_one_holder {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 75px;
+}
+
+.haulix_registration_form {
+    padding-top: 35px;
+}
+
+.reg_form_one_holder h1 {
+    font-family: "Avenir Heavy", sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    color: #000;
+}
+
+label.haulix_form_label {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.9rem;
+    color: #424C5E;
+    text-align: left;
+}
+
+.haulix_form_label sup {
+    font-family: "Avenir Heavy", sans-serif;
+    color: #F3852C;
+}
+
+.haulix_form_fieldset {
+    position: relative;
+    z-index: 4;
+    text-align: left;
+    padding-left: 0;
+    margin-bottom: 55px;
+}
+
+input.haulix_reg_input {
+    position: relative;
+    font-family: "Avenir Light", sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #424C5E;
+    height: 48px;
+    width: 100%;
+    /*margin: 0 auto;*/
+    margin-bottom: 24px;
+    border: 1px solid #cacaca;
+    border-radius: 8px;
+    background: #ffffff;
+    padding-left: 14px;
+    outline: none !important;
+    box-shadow: none;
+}
+
+input.haulix_reg_input:focus {
+    border: 1px solid #cacaca;
+}
+
+.haulix_form_fieldset_subdomain {
+    text-align: left;
+    padding-left: 0;
+    padding-top: 75px;
+    margin-bottom: 55px;
+}
+
+input.haulix_reg_input_subdomain {
+    position: relative;
+    font-family: "Avenir Light", sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #424C5E;
+    height: 48px;
+    width: 100%;
+    margin: 0 auto;
+    /*margin-bottom: 24px;*/
+    border: 1px solid #cacaca;
+    border-radius: 8px;
+    background: #ffffff;
+    padding-left: 14px;
+    outline: none !important;
+    box-shadow: none;
+}
+
+input.haulix_reg_input_subdomain:focus {
+    border: 1px solid #cacaca;
+}
+
+.haulix_form_group_central {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+span.pre_input {
+    position: absolute;
+    left: -45px;
+    top: 41px;
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.9rem;
+    color: #424C5E;
+    text-align: left;
+}
+
+span.after_input {
+    position: absolute;
+    right: -70px;
+    top: 43px;
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.9rem;
+    color: #424C5E;
+    text-align: right;
+}
+
+.infoboard_holder {
+    margin-bottom: 55px;
+}
+
+.infoboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #424C5E;
+    width: 100%;
+    border-radius: 8px;
+    height: 120px;
+    padding: 8px 18px 8px 18px;
+}
+
+span.info_sign {
+    position: relative;
+    /*top: 18px;*/
+    float: left;
+    display: block;
+    height: 65px;
+    width: 65px;
+    margin-right: 18px;
+    background: url('../img/info.svg') center center no-repeat;
+    background-size: contain;
+}
+
+.infoboard article {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-align: left;
+}
+
+.payment_methods_holder {
+    display: inline-block;
+    text-align: center;
+}
+
+ul.payment_methods {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul.payment_methods li {
+    list-style-type: none;
+    float: left;
+    margin-right: 12px;
+}
+
+ul.payment_methods li span {
+    font-size: 3.4rem;
+    color: #A0A5AE;
+}
+
+.payment_infoboard_holder {
+    padding-top: 75px;
+    margin-bottom: 55px;
+}
+
+.payment_infoboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E4773D;
+    width: 100%;
+    border-radius: 8px;
+    height: 120px;
+    padding: 8px 18px 8px 18px;
+}
+
+.payment_infoboard article {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-align: left;
+}
+
+svg.selected_pricing_plan_icon {
+    position: relative;
+    /*top: 18px;*/
+    float: left;
+    display: block;
+    height: 65px;
+    width: 65px;
+    margin-right: 18px;
+    background: url('../img/pp_thebeast_white.svg') center center no-repeat;
+    background-size: contain;
+}
+
+.haulix_form_group > select {
+    margin-bottom: 24px;
+}
+
+.recaptcha_placeholder {
+    /* This class can be removed/modified when applying the real reCaptcha during backend development stage */
+    display: block;
+    margin: 0 auto;
+    height: 88px;
+    width: 320px;
+    text-align: center;
+    padding-top: 42px;
+}
+
+.recpatcha {
+    /* This class can be removed/modified when applying the real reCaptcha during backend development stage */
+    height: inherit;
+    width: inherit;
+    text-align: center;
+    border: 1px solid #cacaca;
+}
+
+.checkbox_holder {
+    padding-top: 24px;
+    margin-bottom: 55px;
+}
+
+.cbx {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.cbx span {
+    /*position: relative;*/
+    /*top: -18px;*/
+    /*left: 9px;*/
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+}
+.cbx span:first-child {
+    position: relative;
+    top: 6px;
+    left: 8px;
+    float: left;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid #9098A9;
+    transition: all 0.2s ease;
+}
+.cbx span:first-child svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+}
+.cbx span:first-child:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #E4773D;
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
+}
+.cbx span:last-child {
+    padding-left: 20px;
+    text-align: left;
+    font-family: "Avenir Light", sans-serif;
+    font-size: 0.77rem;
+    letter-spacing: -0.3px;
+}
+.cbx:hover span:first-child {
+    border-color: #E4773D;
+}
+
+.inp-cbx:checked + .cbx span:first-child {
+    background: #E4773D;
+    border-color: #E4773D;
+    animation: wave 0.4s ease;
+}
+.inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+}
+.inp-cbx:checked + .cbx span:first-child:before {
+    transform: scale(3.5);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+@keyframes wave {
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+a.confirmationlink {
+    color: #E4773D;
+    margin-right: 4px;
+}
+
+.create_account_btn_holder {
+    padding-top: 55px;
+    margin-bottom: 75px;
+}
+
+button.create_account_btn {
+    position: relative;
+    z-index: 500;
+    top: 66px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    width: 250px;
+    height: 48px;
+    background: #000;
+    color: #fff;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.create_account_btn:hover {
+    background: #759AAB;
+    color: #fff;
+}
+
+.create_account_btn_holder p {
+    position: relative;
+    top: 12px;
+    padding-top: 75px;
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 0.77rem;
+    color: #424C5E;
+    text-align: center;
+}
+
+.create_account_btn_holder p a {
+    color: #E4773D;
+}
+
+
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - ARTISTS (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.haulix_innerpage_header.artists {
+    min-height: 500px;
+    height: auto;
+    position: relative;
+    background: url('../img/artists_bgd.png') center center no-repeat;
+    background-size: cover;
+}
+
+.artists_area_skew {
+    position: relative;
+    margin-top: -3%;
+    min-height: 603px;
+    /*height: auto;*/
+    background: #f8f8f8;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.artists_area_str8 {
+    padding-top: 5px;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.artists_midmain {
+    padding-top: 95px;
+}
+
+.general_artist_bubbles_holder {
+    padding-top: 75px;
+}
+
+.artist_bubble_holder {
+    margin-bottom: 42px;
+}
+
+.artist_bubble {
+    /*display: block;*/
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    border-left: 1px solid #E4773D;
+    border-right: 1px solid #8F97A5;
+    /*border-radius: 100%;*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 20px;
+    -moz-background-size: 100% 20px;
+    background-size: 107% 0;
+    background-image: -webkit-linear-gradient(left, #E4773D 0%, #8F97A5 100%), -webkit-linear-gradient(left, #E4773D 0%, #8F97A5 100%);
+    background-image: -moz-linear-gradient(left, #E4773D 0%, #8F97A5 100%), -moz-linear-gradient(left, #E4773D 0%, #8F97A5 100%);
+    background-image: -o-linear-gradient(left, #E4773D 0%, #8F97A5 100%), -o-linear-gradient(left, #E4773D 0%, #8F97A5 100%);
+    background-image: linear-gradient(to right, #E4773D 0%, #8F97A5 100%), linear-gradient(to right, #E4773D 0%, #8F97A5 100%);
+}
+
+img.haulix_artist_logo {
+    display: inline-block;
+    text-align: center;
+    width: 80%;
+}
+
+.show_more_button_holder {
+    padding-top: 1px;
+    margin-bottom: 105px;
+}
+
+button.show_more_artists_btn {
+    position: relative;
+    z-index: 500;
+    top: 66px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    width: 250px;
+    height: 48px;
+    background: #000;
+    color: #fff;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+button.show_more_artists_btn:hover {
+    background: #759AAB;
+    color: #fff;
+}
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - HOW IT WORKS (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.haulix_innerpage_header.howitworks {
+    min-height: 500px;
+    height: auto;
+    position: relative;
+    background: url('../img/howitworks_bgd.png') center center no-repeat;
+    background-size: cover;
+}
+
+.howitworks_area_skew {
+    position: relative;
+    margin-top: -3%;
+    min-height: 603px;
+    /*height: auto;*/
+    background: #f8f8f8;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.howitworks_area_str8 {
+    padding-top: 5px;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.video_overview_section {
+    padding-top: 55px;
+}
+
+.haulix_vid_holder {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 115px;
+    width: 70%;
+    padding-top: 85px;
+}
+
+span.vid_rect_orange {
+    position: absolute;
+    top: 35px;
+    left: -45px;
+    width: 240px;
+    height: 150px;
+
+    background: url('../img/vid_rect_orange.png') center center no-repeat;
+    background-size: contain;
+}
+
+span.vid_rect_blue {
+    position: absolute;
+    bottom: -22px;
+    right: -65px;
+    width: 240px;
+    height: 150px;
+
+    background: url('../img/vid_rect_blue.png') center center no-repeat;
+    background-size: contain;
+}
+
+
+.promos_and_emails_invitations_skew {
+    position: relative;
+    margin-top: -4%;
+    min-height: 700px;
+    /*height: auto;*/
+    background: #fff;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.promos_and_emails_invitations_str8 {
+    padding-top: 55px;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.three_circles_holder {
+    position: relative;
+    padding-top: 75px;
+    margin-bottom: 75px;
+    min-height: 400px;
+    height: auto;
+}
+
+.outer_circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 100%;
+    border: 1px solid #8F97A5;
+    width: 165px;
+    height: 165px;
+}
+
+.inner_circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    height: 142px;
+    border-radius: 100%;
+
+    background: rgba(228,119,61,1);
+    background: -moz-linear-gradient(left, rgba(228,119,61,1) 0%, rgba(143,151,165,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(228,119,61,1)), color-stop(100%, rgba(143,151,165,1)));
+    background: -webkit-linear-gradient(left, rgba(228,119,61,1) 0%, rgba(143,151,165,1) 100%);
+    background: -o-linear-gradient(left, rgba(228,119,61,1) 0%, rgba(143,151,165,1) 100%);
+    background: -ms-linear-gradient(left, rgba(228,119,61,1) 0%, rgba(143,151,165,1) 100%);
+    background: linear-gradient(to right, rgba(228,119,61,1) 0%, rgba(143,151,165,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4773d', endColorstr='#8f97a5', GradientType=1 );
+}
+
+.c_icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.c_icon.create {
+    background: url('../img/c_create.png') center center no-repeat;
+    background-size: contain;
+}
+.c_icon.sendinvitations {
+    background: url('../img/c_mail.png') center center no-repeat;
+    background-size: contain;
+}
+.c_icon.listen {
+    background: url('../img/c_music.png') center center no-repeat;
+    background-size: contain;
+}
+
+.circle_holder {
+    text-align: center;
+}
+
+.circle_txt_holder {
+    position: relative;
+    padding-top: 32px;
+    text-align: center;
+}
+
+.circle_txt_holder h4 {
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #424C5E;
+    margin-bottom: 24px;
+}
+
+.circle_txt_holder article {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #000;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.double_circle {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.circle_and_text {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+span.dotted_arrow {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    top: 45px;
+    left: 200px;
+
+    background: url('../img/dotted_arrow.png') center center no-repeat;
+    background-size: contain;
+}
+
+.monitoring_subsection_area {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 70px;
+}
+
+.monitoring_subsection_area p {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1.14rem;
+    color: #000;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.monitor_laptop_holder {
+    text-align: center;
+    padding-top: 55px;
+}
+
+span.monitor_laptop {
+    display: block;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    background: url('../img/monitoring_laptop_img.png') center center no-repeat;
+    background-size: contain;
+}
+
+
+.all_in_one_place_area_skew {
+    position: relative;
+    margin-top: -4%;
+    min-height: 700px;
+    /*height: auto;*/
+    background: #f8f8f8;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.all_in_one_place_area_str8 {
+    padding-top: 55px;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.discover_and_listen_in_one_pace_holder {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.discover_and_listen_in_one_pace_holder p {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1.14rem;
+    color: #000;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.liquid_soundwave_and_image_holder {
+    padding-top: 55px;
+}
+
+.liquid_soundwave {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    display: block;
+    height: 450px;
+    width: 100%;
+    margin: 0 auto;
+    background: url('../img/liquid_soudwave_shape.png') center center no-repeat;
+    background-size: contain;
+}
+
+.inner_liquid_soundwave_image_holder {
+    position: relative;
+    top: 90px;
+    left: -4px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background: #424C5E;
+    border-radius: 100%;
+    height: 256px;
+    width: 256px;
+}
+
+
+
+
+
+/* ============= */
+/* - - - - - - - - - */
+/* - - - PROMO DESIGNS (INNER) - - - */
+/* - - - - - - - - - */
+/* ============= */
+
+.haulix_innerpage_header.promodesigns {
+    min-height: 500px;
+    height: auto;
+    position: relative;
+    background: url('../img/promodesigns_bgd.png') center center no-repeat;
+    background-size: cover;
+}
+
+.promodesigns_area_skew {
+    position: relative;
+    margin-top: -3%;
+    min-height: 603px;
+    /*height: auto;*/
+    background: #fff;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.promodesigns_area_str8 {
+    padding-top: 75px;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.promo_designs_midmain_section {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.promo_designs_midmain_section p {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1.14rem;
+    color: #000;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.promodesigns_slider_holder {
+    padding-top: 55px;
+    text-align: center;
+    margin-bottom: 77px;
+}
+
+.soloslide {
+    display: block;
+    width: 100%;
+    height: 900px;
+    outline: none !important;
+}
+
+img.centralize {
+    margin: 0 auto;
+}
+
+.slick-slide {
+    padding:10px;
+    margin-right:15px;
+    margin-left:15px;
+}
+
+.slick-prev:before, .slick-next:before{
+    color: #424C5E;
+}
+
+.slick-list {padding:0 20% 0 0;}
+
+.slick-dots {bottom: -75px;}
+
+.slick-prev {left: -50px;}
+
+.slick-next {right: -50px;}
+
+.slick-dots li button::before {font-size: 8px;}
+
+.slick-current.slick-active.slick-center {
+    opacity:1;
+}
+.slick-slide  {
+    opacity:0.2;
+
+    -webkit-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    -ms-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+
+
